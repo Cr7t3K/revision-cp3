@@ -11,6 +11,10 @@
 <div class="example-wrapper">
     <h1>Hello {{ controller_name }}! ✅</h1>
 
+    {% if is_granted('ROLE_ADMIN') %}
+        <a href="{{ path('app_item_new') }}">Ajouter un nouvelle item</a>
+    {% endif %}
+
     {% for item in items %}
        {% include 'item/_item.html.twig' %}
     {% endfor %}
