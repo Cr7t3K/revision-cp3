@@ -12,11 +12,7 @@
     <h1>Hello {{ controller_name }}! ✅</h1>
 
     {% for item in items %}
-        <div style="">
-            <h3>{{ item.name }} ({{ item.price }})</h3>
-            <p>{{ item.description ?? 'Aucune description'}}</p>
-            <a href="{{ path('app_item_show', {'id': item.id }) }}">Plus d'info</a>
-        </div>
+       {% include 'item/_item.html.twig' %}
     {% endfor %}
 </div>
 {% endblock %}

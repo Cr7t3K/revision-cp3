@@ -1,0 +1,8 @@
+<div style="">
+    <h3>{{ item.name }} - {{ item.price }}€ HT</h3>
+    <p>{{ item.description ?? 'Aucune description'}}</p>
+    {% if priceTTC is defined %}
+        <p>Prix TTC: {{ priceTTC }}€</p>
+    {% endif %}
+    <a href="{{ path('app_item_show', {'id': item.id }) }}">Plus d'info</a>
+</div>

@@ -11,23 +11,17 @@
 <div class="example-wrapper">
 
     {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
+        <div style="color: black; background-color: green">
             {{ message }}
         </div>
     {% endfor %}
-
-    <div style="">
-        <h3>{{ item.name }} ({{ item.price }}€ HT)</h3>
-        <p>{{ item.description ?? 'Aucune description'}}</p>
-        <p>Prix TTC: {{ priceTTC }}€</p>
-        <a href="{{ path('app_item_show', {'id': item.id }) }}">Plus d'info</a>
-    </div>
-
-
     {% for message in app.flashes('error') %}
         <div style="color: black; background-color: #B0413E">
             {{ message }}
         </div>
     {% endfor %}
+
+
+    {% include 'item/_item.html.twig' %}
 </div>
 {% endblock %}
